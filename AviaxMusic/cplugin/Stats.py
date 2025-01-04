@@ -9,17 +9,17 @@ from pyrogram.types import InputMediaPhoto, Message
 from pytgcalls.__version__ import __version__ as pytgver
 
 import config
-from SHUKLAMUSIC import app
-from SHUKLAMUSIC.core.userbot import assistants
-from SHUKLAMUSIC.misc import SUDOERS, mongodb
-from SHUKLAMUSIC.plugins import ALL_MODULES
-from SHUKLAMUSIC.utils.database import (
+from AviaxMusic import app
+from AviaxMusic.core.userbot import assistants
+from AviaxMusic.misc import SUDOERS, mongodb
+from AviaxMusic.plugins import ALL_MODULES
+from AviaxMusic.utils.database import (
     get_served_chats_clone,
     get_served_users_clone,
     get_sudoers,
 )
-from SHUKLAMUSIC.utils.decorators.language import language, languageCB
-from SHUKLAMUSIC.utils.inline.stats import back_stats_buttons, stats_buttons
+from AviaxMusic.utils.decorators.language import language, languageCB
+from AviaxMusic.utils.inline.stats import back_stats_buttons, stats_buttons
 from config import BANNED_USERS
 
 
