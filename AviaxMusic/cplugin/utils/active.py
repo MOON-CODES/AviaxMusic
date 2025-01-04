@@ -1,4 +1,4 @@
-from SHUKLAMUSIC.misc import clonedb
+from AviaxMusic.misc import clonedb
 
 active = []
 stream = {}
