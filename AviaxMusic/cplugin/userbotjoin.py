@@ -1,6 +1,6 @@
 import asyncio
-from SHUKLAMUSIC.misc import SUDOERS
-from SHUKLAMUSIC.core.userbot import Userbot
+from AviaxMusic.misc import SUDOERS
+from AviaxMusic.core.userbot import Userbot
 from pyrogram import Client, filters
 from pyrogram.errors import UserAlreadyParticipant
 import asyncio
@@ -13,9 +13,9 @@ from pyrogram.errors import (
     UserAlreadyParticipant,
     UserNotParticipant,
 )
-from SHUKLAMUSIC.utils.shukla_ban import admin_filter
-from SHUKLAMUSIC.utils.decorators.userbotjoin import UserbotWrapper
-from SHUKLAMUSIC.utils.database import get_assistant, is_active_chat
+from AviaxMusic.utils.shukla_ban import admin_filter
+from AviaxMusic.utils.decorators.userbotjoin import UserbotWrapper
+from AviaxMusic.utils.database import get_assistant, is_active_chat
 
 links = {}
 
