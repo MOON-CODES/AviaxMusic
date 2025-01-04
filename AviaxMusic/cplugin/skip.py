@@ -2,14 +2,14 @@ from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 import config
-from SHUKLAMUSIC import YouTube, app
-from SHUKLAMUSIC.core.call import SHUKLA
-from SHUKLAMUSIC.misc import db
-from SHUKLAMUSIC.utils.database import get_loop
-from SHUKLAMUSIC.utils.decorators import AdminRightsCheck
-from SHUKLAMUSIC.utils.inline import close_markup, stream_markup, stream_markup2
-from SHUKLAMUSIC.utils.stream.autoclear import auto_clean
-from SHUKLAMUSIC.utils.thumbnails import get_thumb
+from AviaxMusic import YouTube, app
+from AviaxMusic.core.call import Aviax
+from AviaxMusic.misc import db
+from AviaxMusic.utils.database import get_loop
+from AviaxMusic.utils.decorators import AdminRightsCheck
+from AviaxMusic.utils.inline import close_markup, stream_markup, stream_markup2
+from AviaxMusic.utils.stream.autoclear import auto_clean
+from AviaxMusic.utils.thumbnails import get_thumb
 from config import BANNED_USERS
 
 
@@ -115,7 +115,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await SHUKLA.skip_stream(chat_id, link, video=status, image=image)
+            await Aviax.skip_stream(chat_id, link, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup2(_, chat_id)
@@ -148,7 +148,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await SHUKLA.skip_stream(chat_id, file_path, video=status, image=image)
+            await Aviax.skip_stream(chat_id, file_path, video=status, image=image)
         except:
             return await mystic.edit_text(_["call_6"])
         button = stream_markup(_, videoid, chat_id)
@@ -168,7 +168,7 @@ async def skip(cli, message: Message, _, chat_id):
         await mystic.delete()
     elif "index_" in queued:
         try:
-            await SHUKLA.skip_stream(chat_id, videoid, video=status)
+            await Aviax.skip_stream(chat_id, videoid, video=status)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup2(_, chat_id)
@@ -190,7 +190,7 @@ async def skip(cli, message: Message, _, chat_id):
             except:
                 image = None
         try:
-            await SHUKLA.skip_stream(chat_id, queued, video=status, image=image)
+            await Aviax.skip_stream(chat_id, queued, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         if videoid == "telegram":
