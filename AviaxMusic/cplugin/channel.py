@@ -2,13 +2,13 @@ from pyrogram import filters, Client
 from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
 from pyrogram.types import Message
 
-from SHUKLAMUSIC import app
-from SHUKLAMUSIC.utils.database import set_cmode
-from SHUKLAMUSIC.utils.decorators.admins import AdminActual
+from AviaxMusic import app
+from AviaxMusic.utils.database import set_cmode
+from AviaxMusic.utils.decorators.admins import AdminActual
 from config import BANNED_USERS
 from time import time
 import asyncio
-from SHUKLAMUSIC.utils.extraction import extract_user
+from AviaxMusic.utils.extraction import extract_user
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
