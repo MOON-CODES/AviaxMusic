@@ -8,8 +8,8 @@ from pyrogram.types import (
     Message,
 )
 
-from SHUKLAMUSIC import app
-from SHUKLAMUSIC.utils.database import (
+from AviaxMusic import app
+from AviaxMusic.utils.database import (
     add_nonadmin_chat,
     get_authuser,
     get_authuser_names,
@@ -25,15 +25,15 @@ from SHUKLAMUSIC.utils.database import (
     skip_off,
     skip_on,
 )
-from SHUKLAMUSIC.utils.decorators.admins import ActualAdminCB
-from SHUKLAMUSIC.utils.decorators.language import language, languageCB
-from SHUKLAMUSIC.utils.inline.settings import (
+from AviaxMusic.utils.decorators.admins import ActualAdminCB
+from AviaxMusic.utils.decorators.language import language, languageCB
+from AviaxMusic.utils.inline.settings import (
     auth_users_markup,
     playmode_users_markup,
     setting_markup,
     vote_mode_markup,
 )
-from SHUKLAMUSIC.utils.inline.start import private_panel
+from AviaxMusic.utils.inline.start import private_panel
 from config import BANNED_USERS, OWNER_ID
 
 
