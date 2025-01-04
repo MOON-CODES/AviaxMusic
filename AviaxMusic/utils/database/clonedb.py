@@ -1,4 +1,4 @@
-from SHUKLAMUSIC.core.mongo import mongodb, pymongodb
+from AviaxMusic.core.mongo import mongodb, pymongodb
 from typing import Dict, List, Union
 
 cloneownerdb = mongodb.cloneownerdb
