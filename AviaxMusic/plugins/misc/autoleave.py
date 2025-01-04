@@ -6,7 +6,7 @@ import config
 from AviaxMusic import app
 from AviaxMusic.misc import db
 from AviaxMusic.core.call import Aviax, autoend, counter
-from AviaxMusic.utils.database import get_client, set_loop, is_active_chat, is_autoend, is_autoleave
+from AviaxMusic.utils.database import get_client, set_loop, is_active_chat, is_autoend
 import logging
 
 async def auto_leave():
