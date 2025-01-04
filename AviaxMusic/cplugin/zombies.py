@@ -5,10 +5,10 @@ from pyrogram.types import Message
 from pyrogram import enums, Client
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import FloodWait
-from SHUKLAMUSIC import app
+from AviaxMusic import app
 from time import time
 import asyncio
-from SHUKLAMUSIC.utils.extraction import extract_user
+from AviaxMusic.utils.extraction import extract_user
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
