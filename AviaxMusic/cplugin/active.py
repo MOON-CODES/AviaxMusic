@@ -2,9 +2,9 @@ from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from unidecode import unidecode
 
-from SHUKLAMUSIC import app
-from SHUKLAMUSIC.misc import SUDOERS
-from SHUKLAMUSIC.utils.database import (
+from AviaxMusic import app
+from AviaxMusic.misc import SUDOERS
+from AviaxMusic.utils.database import (
     get_active_chats,
     get_active_video_chats,
     remove_active_chat,
