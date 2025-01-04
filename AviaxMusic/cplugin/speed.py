@@ -1,13 +1,13 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from SHUKLAMUSIC import app
-from SHUKLAMUSIC.core.call import SHUKLA
-from SHUKLAMUSIC.misc import SUDOERS, db
-from SHUKLAMUSIC.utils import AdminRightsCheck
-from SHUKLAMUSIC.utils.database import is_active_chat, is_nonadmin_chat
-from SHUKLAMUSIC.utils.decorators.language import languageCB
-from SHUKLAMUSIC.utils.inline import close_markup, speed_markup
+from AviaxMusic import app
+from AviaxMusic.core.call import Aviax
+from AviaxMusic.misc import SUDOERS, db
+from AviaxMusic.utils import AdminRightsCheck
+from AviaxMusic.utils.database import is_active_chat, is_nonadmin_chat
+from AviaxMusic.utils.decorators.language import languageCB
+from AviaxMusic.utils.inline import close_markup, speed_markup
 from config import BANNED_USERS, adminlist
 
 checker = []
@@ -86,7 +86,7 @@ async def del_back_playlist(client, callback_query, _):
         text=_["admin_32"].format(callback_query.from_user.mention),
     )
     try:
-        await SHUKLA.speedup_stream(
+        await Aviax.speedup_stream(
             chat_id,
             file_path,
             speed,
