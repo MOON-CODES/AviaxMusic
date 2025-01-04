@@ -3,10 +3,10 @@ from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from dotenv import load_dotenv
 import config
-from SHUKLAMUSIC.core.userbot import Userbot
-from SHUKLAMUSIC import app
+from AviaxMusic.core.userbot import Userbot
+from AviaxMusic import app
 from datetime import datetime
-from SHUKLAMUSIC.utils.database import get_assistant
+from AviaxMusic.utils.database import get_assistant
 
 # Assuming Userbot is defined elsewhere
 
