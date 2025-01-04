@@ -1,15 +1,15 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from SHUKLAMUSIC import app
-from SHUKLAMUSIC.core.call import SHUKLA
-from SHUKLAMUSIC.utils.decorators import AdminRightsCheck
-from SHUKLAMUSIC.utils.inline import close_markup
+from AviaxMusic import app
+from AviaxMusic.core.call import Aviax
+from AviaxMusic.utils.decorators import AdminRightsCheck
+from AviaxMusic.utils.inline import close_markup
 from config import BANNED_USERS
 import random
 from typing import Dict, List, Union
 
-from SHUKLAMUSIC import userbot
-from SHUKLAMUSIC.core.mongo import mongodb, pymongodb
+from AviaxMusic import userbot
+from AviaxMusic.core.mongo import mongodb, pymongodb
 
 authdb = mongodb.adminauth
 authuserdb = mongodb.authuser
@@ -79,7 +79,7 @@ async def music_off(chat_id: int):
 async def pause_admin(cli, message: Message, _, chat_id):
 
     await music_off(chat_id)
-    await SHUKLA.pause_stream(chat_id)
+    await Aviax.pause_stream(chat_id)
 
     buttons = [
         [
