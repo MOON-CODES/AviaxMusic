@@ -1,8 +1,8 @@
 import random
 from typing import Dict, List, Union
 
-from SHUKLAMUSIC import userbot
-from SHUKLAMUSIC.core.mongo import mongodb, pymongodb
+from AviaxMusic import userbot
+from AviaxMusic.core.mongo import mongodb, pymongodb
 
 authdb = mongodb.adminauth
 authuserdb = mongodb.authuser
