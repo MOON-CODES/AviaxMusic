@@ -5,17 +5,17 @@ import os
 import re
 import asyncio
 import time
-from SHUKLAMUSIC import app
-from SHUKLAMUSIC.utils.database import add_served_chat_clone, delete_served_chat_clone
+from AviaxMusic import app
+from AviaxMusic.utils.database import add_served_chat_clone, delete_served_chat_clone
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from SHUKLAMUSIC.utils.database import get_assistant
+from AviaxMusic.utils.database import get_assistant
 import asyncio
-from SHUKLAMUSIC.misc import SUDOERS
-from SHUKLAMUSIC.mongo.afkdb import LOGGERS as OWNERS
-from SHUKLAMUSIC.core.userbot import Userbot
+from AviaxMusic.misc import SUDOERS
+from AviaxMusic.mongo.afkdb import LOGGERS as OWNERS
+from AviaxMusic.core.userbot import Userbot
 from pyrogram import Client, filters
 from pyrogram.errors import UserAlreadyParticipant
-from SHUKLAMUSIC import app
+from AviaxMusic import app
 import asyncio
 import random
 from pyrogram import Client, filters
@@ -26,10 +26,10 @@ from pyrogram.errors import (
     UserAlreadyParticipant,
     UserNotParticipant,
 )
-from SHUKLAMUSIC import app
-from SHUKLAMUSIC.utils.shukla_ban import admin_filter
-from SHUKLAMUSIC.utils.decorators.userbotjoin import UserbotWrapper
-from SHUKLAMUSIC.utils.database import get_assistant, is_active_chat
+from AviaxMusic import app
+from AviaxMusic.utils.shukla_ban import admin_filter
+from AviaxMusic.utils.decorators.userbotjoin import UserbotWrapper
+from AviaxMusic.utils.database import get_assistant, is_active_chat
 
 
 @Client.on_message(filters.command("repo") & filters.group)
