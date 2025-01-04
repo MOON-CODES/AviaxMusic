@@ -8,7 +8,7 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 )
 
 import datetime
-from SHUKLAMUSIC import app
+from AviaxMusic import app
 
 
 def mention(user, name, mention=True):
