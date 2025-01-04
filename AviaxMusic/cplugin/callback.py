@@ -7,13 +7,13 @@ from pyrogram.errors import (
     UserAlreadyParticipant,
     UserNotParticipant,
 )
-from SHUKLAMUSIC.utils.database import get_assistant
+from AviaxMusic.utils.database import get_assistant
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
-from SHUKLAMUSIC import YouTube, app
-from SHUKLAMUSIC.core.call import SHUKLA
-from SHUKLAMUSIC.misc import SUDOERS, db
-from SHUKLAMUSIC.utils.database import (
+from AviaxMusic import YouTube, app
+from AviaxMusic.core.call import Aviax
+from AviaxMusic.misc import SUDOERS, db
+from AviaxMusic.utils.database import (
     get_active_chats,
     get_lang,
     get_upvote_count,
@@ -27,9 +27,9 @@ from SHUKLAMUSIC.utils.database import (
     is_muted,
     set_loop,
 )
-from SHUKLAMUSIC.utils.decorators.language import languageCB
-from SHUKLAMUSIC.utils.formatters import seconds_to_min
-from SHUKLAMUSIC.utils.inline import (
+from AviaxMusic.utils.decorators.language import languageCB
+from AviaxMusic.utils.formatters import seconds_to_min
+from AviaxMusic.utils.inline import (
     close_markup,
     stream_markup,
     stream_markup_timer,
@@ -51,8 +51,8 @@ from SHUKLAMUSIC.utils.inline import (
     queue_markup,
     panel_markup_1,
 )
-from SHUKLAMUSIC.utils.stream.autoclear import auto_clean
-from SHUKLAMUSIC.utils.thumbnails import get_thumb
+from AviaxMusic.utils.stream.autoclear import auto_clean
+from AviaxMusic.utils.thumbnails import get_thumb
 from config import (
     BANNED_USERS,
     SOUNCLOUD_IMG_URL,
@@ -331,7 +331,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         )
     elif command == "Stop" or command == "End":
         await CallbackQuery.answer()
-        await SHUKLA.stop_stream(chat_id)
+        await Aviax.stop_stream(chat_id)
         await set_loop(chat_id, 0)
         await CallbackQuery.message.reply_text(
             _["admin_5"].format(mention), reply_markup=close_markup(_)
@@ -342,14 +342,14 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_45"], show_alert=True)
         await CallbackQuery.answer()
         await mute_on(chat_id)
-        await SHUKLA.mute_stream(chat_id)
+        await Aviax.mute_stream(chat_id)
         await CallbackQuery.message.reply_text(_["admin_46"].format(mention))
     elif command == "Unmute":
         if not await is_muted(chat_id):
             return await CallbackQuery.answer(_["admin_47"], show_alert=True)
         await CallbackQuery.answer()
         await mute_off(chat_id)
-        await SHUKLA.unmute_stream(chat_id)
+        await Aviax.unmute_stream(chat_id)
         await CallbackQuery.message.reply_text(_["admin_48"].format(mention))
     elif command == "Loop":
         await CallbackQuery.answer()
@@ -606,7 +606,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             if n == 0:
                 return await mystic.edit_text(_["admin_22"])
         try:
-            await SHUKLA.seek_stream(
+            await Aviax.seek_stream(
                 chat_id,
                 file_path,
                 seconds_to_min(to_seek),
