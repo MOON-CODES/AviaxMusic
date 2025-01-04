@@ -1,14 +1,14 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from SHUKLAMUSIC import app
-from SHUKLAMUSIC.core.call import SHUKLA
+from AviaxMusic import app
+from AviaxMusic.core.call import Aviax
 
-from SHUKLAMUSIC.utils.decorators import AdminRightsCheck
-from SHUKLAMUSIC.utils.inline import close_markup
+from AviaxMusic.utils.decorators import AdminRightsCheck
+from AviaxMusic.utils.inline import close_markup
 from config import BANNED_USERS
-from SHUKLAMUSIC import userbot
-from SHUKLAMUSIC.core.mongo import mongodb, pymongodb
+from AviaxMusic import userbot
+from AviaxMusic.core.mongo import mongodb, pymongodb
 
 authdb = mongodb.adminauth
 authuserdb = mongodb.authuser
@@ -81,7 +81,7 @@ async def resume_com(cli, message: Message, _, chat_id):
     if await is_music_playing(chat_id):
         return await message.reply_text(_["admin_3"])
     await music_on(chat_id)
-    await SHUKLA.resume_stream(chat_id)
+    await Aviax.resume_stream(chat_id)
     buttons_resume = [
         [
             InlineKeyboardButton(text="sᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}"),
