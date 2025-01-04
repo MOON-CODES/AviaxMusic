@@ -1,9 +1,9 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from SHUKLAMUSIC import app
-from SHUKLAMUSIC.utils import extract_user, int_to_alpha
-from SHUKLAMUSIC.utils.database import (
+from AviaxMusic import app
+from AviaxMusic.utils import extract_user, int_to_alpha
+from AviaxMusic.utils.database import (
     delete_authuser,
     get_authuser,
     get_authuser_names,
