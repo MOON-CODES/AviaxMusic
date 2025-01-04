@@ -3,17 +3,17 @@ from typing import Union
 from pyrogram import filters, types, Client
 from pyrogram.types import InlineKeyboardMarkup, Message
 
-from SHUKLAMUSIC import app
-from SHUKLAMUSIC.utils import first_page, second_page
-from SHUKLAMUSIC.utils.database import get_lang
-from SHUKLAMUSIC.utils.decorators.language import LanguageStart, languageCB
-from SHUKLAMUSIC.utils.inline.help import help_back_markup, private_help_panel
+from AviaxMusic import app
+from AviaxMusic.utils import first_page, second_page
+from AviaxMusic.utils.database import get_lang
+from AviaxMusic.utils.decorators.language import LanguageStart, languageCB
+from AviaxMusic.utils.inline.help import help_back_markup, private_help_panel
 from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
 from strings import get_string, helpers
-from SHUKLAMUSIC.misc import SUDOERS
+from AviaxMusic.misc import SUDOERS
 from time import time
 import asyncio
-from SHUKLAMUSIC.utils.extraction import extract_user
+from AviaxMusic.utils.extraction import extract_user
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
@@ -95,7 +95,7 @@ async def helper_cb(client, CallbackQuery, _):
     if cb == "hb9":
         if CallbackQuery.from_user.id not in SUDOERS:
             return await CallbackQuery.answer(
-                "😎𝗣𝗔𝗛𝗟𝗘 𓆩𝗦𝗛𝗜𝗩𝗔𝗡𝗦𝗛𓆪 𝗞𝗢 𝗣𝗔𝗣𝗔 𝗕𝗢𝗟 𝗝𝗔𝗞𝗘 😆😆", show_alert=True
+                "😎𝗣𝗔𝗛𝗟𝗘 jao yeah sa abhii 😆😆", show_alert=True
             )
         else:
             await CallbackQuery.edit_message_text(helpers.HELP_9, reply_markup=keyboard)
