@@ -5,25 +5,25 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
-from SHUKLAMUSIC.utils.database import get_assistant
+from AviaxMusic.utils.database import get_assistant
 import config
-from SHUKLAMUSIC import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
-from SHUKLAMUSIC.core.call import SHUKLA
-from SHUKLAMUSIC.misc import SUDOERS
-from SHUKLAMUSIC.utils.inline import panel_markup_clone
-from SHUKLAMUSIC.utils import seconds_to_min, time_to_seconds
-from SHUKLAMUSIC.utils.channelplay import get_channeplayCB
-from SHUKLAMUSIC.utils.decorators.language import languageCB
-from SHUKLAMUSIC.utils.decorators.play import CPlayWrapper
-from SHUKLAMUSIC.utils.formatters import formats
-from SHUKLAMUSIC.utils.inline import (
+from AviaxMusic import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
+from AviaxMusic.core.call import Aviax
+from AviaxMusic.misc import SUDOERS
+from AviaxMusic.utils.inline import panel_markup_clone
+from AviaxMusic.utils import seconds_to_min, time_to_seconds
+from AviaxMusic.utils.channelplay import get_channeplayCB
+from AviaxMusic.utils.decorators.language import languageCB
+from AviaxMusic.utils.decorators.play import CPlayWrapper
+from AviaxMusic.utils.formatters import formats
+from AviaxMusic.utils.inline import (
     botplaylist_markup,
     livestream_markup,
     playlist_markup,
     slider_markup,
     track_markup,
 )
-from SHUKLAMUSIC.utils.database import (
+from AviaxMusic.utils.database import (
     add_served_chat_clone,
     add_served_user_clone,
     blacklisted_chats,
@@ -31,10 +31,10 @@ from SHUKLAMUSIC.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from SHUKLAMUSIC.utils.logger import play_logs
+from AviaxMusic.utils.logger import play_logs
 from config import BANNED_USERS, lyrical
 from time import time
-from SHUKLAMUSIC.utils.extraction import extract_user
+from AviaxMusic.utils.extraction import extract_user
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
@@ -618,8 +618,8 @@ async def play_music(client: Client, CallbackQuery, _):
     return await mystic.delete()
 
 
-@Client.on_callback_query(filters.regex("SHUKLAmousAdmin") & ~BANNED_USERS)
-async def SHUKLAmous_check(client: Client, CallbackQuery):
+@Client.on_callback_query(filters.regex("AviaxAmousAdmin") & ~BANNED_USERS)
+async def AviaxAmous_check(client: Client, CallbackQuery):
     try:
         await CallbackQuery.answer(
             "» ʀᴇᴠᴇʀᴛ ʙᴀᴄᴋ ᴛᴏ ᴜsᴇʀ ᴀᴄᴄᴏᴜɴᴛ :\n\nᴏᴘᴇɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ sᴇᴛᴛɪɴɢs.\n-> ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀs\n-> ᴄʟɪᴄᴋ ᴏɴ ʏᴏᴜʀ ɴᴀᴍᴇ\n-> ᴜɴᴄʜᴇᴄᴋ ᴀɴᴏɴʏᴍᴏᴜs ᴀᴅᴍɪɴ ᴘᴇʀᴍɪssɪᴏɴs.",
@@ -629,7 +629,7 @@ async def SHUKLAmous_check(client: Client, CallbackQuery):
         pass
 
 
-@Client.on_callback_query(filters.regex("SHUKLAPlaylists") & ~BANNED_USERS)
+@Client.on_callback_query(filters.regex("AviaxPlaylists") & ~BANNED_USERS)
 @languageCB
 async def play_playlists_command(client: Client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
@@ -772,12 +772,12 @@ from pyrogram import Client
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from SHUKLAMUSIC import Carbon, YouTube
-from SHUKLAMUSIC.core.call import SHUKLA
-from SHUKLAMUSIC.misc import db
-from SHUKLAMUSIC.utils.database import add_active_video_chat, is_active_chat
-from SHUKLAMUSIC.utils.exceptions import AssistantErr
-from SHUKLAMUSIC.utils.inline import (
+from AviaxMusic import Carbon, YouTube
+from AviaxMusic.core.call import Aviax
+from AviaxMusic.misc import db
+from AviaxMusic.utils.database import add_active_video_chat, is_active_chat
+from AviaxMusic.utils.exceptions import AssistantErr
+from AviaxMusic.utils.inline import (
     aq_markup,
     queuemarkup,
     close_markup,
@@ -785,8 +785,8 @@ from SHUKLAMUSIC.utils.inline import (
     stream_markup2,
     panel_markup_4,
 )
-from SHUKLAMUSIC.utils.pastebin import SHUKLABin
-from SHUKLAMUSIC.utils.stream.queue import put_queue, put_queue_index
+from AviaxMusic.utils.pastebin import AviaxBin
+from AviaxMusic.utils.stream.queue import put_queue, put_queue_index
 from youtubesearchpython.__future__ import VideosSearch
 
 
@@ -807,7 +807,7 @@ async def stream(
     if not result:
         return
     if forceplay:
-        await SHUKLA.force_stop_stream(chat_id)
+        await Aviax.force_stop_stream(chat_id)
     if streamtype == "playlist":
         msg = f"{_['play_19']}\n\n"
         count = 0
@@ -1062,7 +1062,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await SHUKLA.join_call(chat_id, original_chat_id, file_path, video=status)
+            await Aviax.join_call(chat_id, original_chat_id, file_path, video=status)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -1118,7 +1118,7 @@ async def stream(
             n, file_path = await YouTube.video(link)
             if n == 0:
                 raise AssistantErr(_["str_3"])
-            await SHUKLA.join_call(
+            await Aviax.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
