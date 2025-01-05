@@ -16,7 +16,7 @@ from AviaxMusic import app
 from config import OWNER_ID
 from AviaxMusic.misc import SUDOERS
 from AviaxMusic.utils.database import get_assistant, clonebotdb
-from config import LOGGER_ID
+from config import LOG_GROUP_ID
 import requests
 
 CLONES = set()
