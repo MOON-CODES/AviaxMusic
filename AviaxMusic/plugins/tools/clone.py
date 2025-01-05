@@ -164,14 +164,14 @@ async def restart_bots():
                 API_ID,
                 API_HASH,
                 bot_token=bot_token,
-                plugins=dict(root="BABYMUSIC.cplugin"),
+                plugins=dict(root="AviaxMusic.cplugin"),
             )
             await ai.start()
 
             # Set bot's about text
             def set_bot_about():
                 url = f"https://api.telegram.org/bot{bot_token}/setMyAbout"
-                params = {"about": "Part Of - @ProBotts"}
+                params = {"about": "Part Of - @untoldsbots"}
                 response = requests.post(url, data=params)
                 print(response.json())
 
