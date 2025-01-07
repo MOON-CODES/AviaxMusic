@@ -9,8 +9,8 @@ from AviaxMusic.utils.database import (
     get_authuser_names,
     save_authuser,
 )
-from SHUKLAMUSIC.utils.decorators import AdminActual, language
-from SHUKLAMUSIC.utils.inline import close_markup
+from AviaxMusic.utils.decorators import AdminActual, language
+from AviaxMusic.utils.inline import close_markup
 from config import BANNED_USERS, adminlist
 
 
